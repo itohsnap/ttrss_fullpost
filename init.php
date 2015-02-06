@@ -95,6 +95,12 @@ class Af_Fullpost extends Plugin implements IHandler
 		$html = curl_exec($handle);
 		curl_close($handle);
 		
+		//if (!$charset = mb_detect_encoding($source)) {
+		//}
+		preg_match("/charset=([\w|\-]+);?/", $html, $match);
+		$charset = isset($match[1]) ? $match[1] : 'utf-8';
+		$html = mb_convert_encoding($html, 'UTF-8', $charset);
+		
 		// If we've got Tidy, let's clean up input.
 		// This step is highly recommended - PHP's default HTML parser often doesn't do a great job and results in strange output.
 		if (function_exists('tidy_parse_string')) {
