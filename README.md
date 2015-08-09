@@ -1,5 +1,6 @@
 ttrss_fullpost
 ==============
+**August 2015 Update:** Recently, fox created his own version of this plugin, which he's called "af_readability." Given that it is included in TT-RSS by default, I know of no reason to use this plugin over fox's version--I've been doing so for the last couple weeks, without issue.
 
 A Tiny Tiny RSS plugin to convert feeds with partial posts into feeds with full posts, using the fivefilters version of PHP-Readability. A preference tab lets you specify which feeds you want processed.
 
