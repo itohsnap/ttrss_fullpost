@@ -1,43 +1,32 @@
 ttrss_fullpost
 ==============
-**August 2015 Update:** Recently, fox created his own version of this plugin, which he's called "af_readability." Given that it is included in TT-RSS by default, I know of no reason to use this plugin over fox's version--I've been doing so for the last couple weeks, without issue.
 
-A Tiny Tiny RSS plugin to convert feeds with partial posts into feeds with full posts, using the fivefilters version of PHP-Readability. A preference tab lets you specify which feeds you want processed.
+A Tiny Tiny RSS plugin to convert feeds with partial posts into feeds with full posts, using the fivefilters version of PHP-Readability.
 
-(If you want to run all but a few feeds through the full-text processor, [ManuelW77's fork](https://github.com/ManuelW77/ttrss_fullpost) might suit your needs better... which also inspired my switching versions of PHP-Readability.)
+(If you want to run all but a few feeds through the full-text processor, [ManuelW77's fork](https://github.com/ManuelW77/ttrss_fullpost) might suit your needs better.)
 
 
 Installation
 ------------------------
 
-Create an "af_fullpost" folder in your TT-RSS "plugins" folder. Put copies of "init.php", "Readability.php", and "JSLikeHTMLElement.php" into that folder.
+Create an "af_fullpost" folder in your TT-RSS "plugins" folder, and put a copy of "init.php" into it.
 
 
 Configuration
 ------------------------
 
-In the TT-RSS preferences, you should now find a new tab called "FullPost." In that tab is a giant text field, where you can specify the feeds you want to run through PHP-Readability either in a comma-separated list:
+Right-click on a feed in TT-RSS and choose "Edit Feed". In the dialog that pops up, check the "Fetch full post" checkbox, under the FullPost section.
 
-    kotaku.com, destructoid, arstechnica.com
-
-or in a newline-separated list:
-
-    kotaku.com
-    destructoid
-    arstechnica.com
-    
-**Earlier users:** this should no longer be a JSON array!
-
-Note that this will consider the feed to match if the feed's "link" URL contains any element's text. Most notably, Destructoid's posts are linked through Feedburner, and so "destructoid.com" doesn't match--but there is a "Destructoid" in the Feedburner URL, so "destructoid" will. (Link comparisons are case-insensitive.)
+You can also view all sites that you're fetching full posts for in the "Feeds" tab of the TT-RSS Preferences, under the "FullPost settings" section.
 
 
 References
 ------------------------
 
-The original version of this (and all credit for the idea): https://github.com/atallo/ttrss_fullpost
+The original version (and all credit for the idea) of this is by [atallo](https://github.com/atallo/ttrss_fullpost). 
 
-The preference pane code was pretty much ripped wholesale from: https://github.com/mbirth/ttrss_plugin-af_feedmod
+The feed selection and whatnot code was ripped out of fox's [af\_readability](https://tt-rss.org/gitlab/fox/tt-rss/tree/master/plugins/af_readability) plugin.
 
-PHP-Readability is now the fivefilters variant: http://code.fivefilters.org/php-readability/overview
+PHP-Readability is the [fivefilters](http://code.fivefilters.org/php-readability/overview) variant.
 
-Some code from the previous PHP-Readability library is still used: https://github.com/feelinglucky/php-readability
+Some code from the previous [PHP-Readability library](https://github.com/feelinglucky/php-readability) is still used.
